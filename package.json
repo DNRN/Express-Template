@@ -4,8 +4,22 @@
   "description": "Express template project",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"tsc -w \" \"nodemon server.js\"",
+    "config": "node scripts/configure.js",
+    "postinstall": "typings install"
+    
   },
   "author": "Dennis Christensen",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^2.2.0",
+    "nodemon": "^1.10.2",
+    "typescript": "^2.0.6",
+    "typings": "^1.3.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0"
+  }
 }
